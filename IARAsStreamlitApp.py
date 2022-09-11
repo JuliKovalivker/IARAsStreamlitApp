@@ -28,11 +28,11 @@ def load(filename):
    return np_image
 
 st.title('IARA - TBC Detector')
-st.subheader('Your health, our mission')
+st.subheader('Your health, our mission ;)')
 img = st.file_uploader("Choose a file")
 if img:
     model = tf.keras.models.load_model(r"C:\Users\julik\OneDrive\Desktop\IARAsStreamlitApp\TBC_CNN_Fusion_AugementedData.h5")
     img = load(img)
     st.image(img)
     st.subheader("TBC percentage: %" + ((str((model.predict(img))*100)).split("[")[2]).split("]")[0])
-    st.write("It is important to know this ISN'T A DIAGNOSIS and this should be checked by an expert and blah blah blah")
+    st.write("It is important to know this ISN'T A DIAGNOSIS and this should be checked by an expert")
